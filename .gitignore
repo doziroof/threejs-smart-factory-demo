@@ -1,0 +1,17 @@
+# Dependencies / build tools
+node_modules/
+.npm/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local only
+*.local

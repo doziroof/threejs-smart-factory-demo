@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js 智慧工厂可视化 Demo | 曹志浩</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      window.addEventListener("error", function (e) {
+        var el = document.getElementById("boot-error");
+        if (!el) return;
+        el.hidden = false;
+        el.textContent =
+          "加载失败：" +
+          (e.message || "未知错误") +
+          "。请先双击「启动Demo.bat」，再用浏览器打开 http://127.0.0.1:5173/";
+      });
+      window.addEventListener("unhandledrejection", function (e) {
+        var el = document.getElementById("boot-error");
+        if (!el) return;
+        el.hidden = false;
+        el.textContent = "运行错误：" + ((e.reason && e.reason.message) || e.reason || "未知");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="boot-error" class="hud boot-error" hidden></div>
+    <noscript>
+      <p style="color: #fff; padding: 20px">需要启用 JavaScript 才能运行 3D 场景。</p>
+    </noscript>
+
+    <header class="hud top-left">
+      <h1>智慧工厂 · Three.js 可视化</h1>
+      <p class="sub">InstancedMesh 渲染优化对比 Demo</p>
+      <ul class="meta">
+        <li><span>作者</span>曹志浩</li>
+        <li><span>技术栈</span>Three.js / WebGL / 本地依赖</li>
+        <li><span>亮点</span>实例化渲染 · 粒子流 · 交互镜头</li>
+      </ul>
+    </header>
+
+    <aside class="hud top-right">
+      <div class="panel">
+        <div class="row">
+          <span>渲染模式</span>
+          <div class="btns">
+            <button id="btn-instanced" class="active" type="button">InstancedMesh</button>
+            <button id="btn-meshes" type="button">独立 Mesh</button>
+          </div>
+        </div>
+        <div class="row">
+          <span>实例数量</span>
+          <input id="count" type="range" min="200" max="5000" step="100" value="1200" />
+          <strong id="count-label">1200</strong>
+        </div>
+        <div class="row">
+          <span>动画速度</span>
+          <input id="speed" type="range" min="0" max="200" step="1" value="80" />
+        </div>
+        <div class="row">
+          <span>粒子流</span>
+          <button id="btn-particles" class="active" type="button">开启</button>
+        </div>
+        <div class="row stats">
+          <div><span>FPS</span><strong id="fps">--</strong></div>
+          <div><span>Draw Calls</span><strong id="calls">--</strong></div>
+          <div><span>三角面</span><strong id="tris">--</strong></div>
+        </div>
+        <p class="tip">鼠标左键旋转 · 右键平移 · 滚轮缩放</p>
+      </div>
+    </aside>
+
+    <footer class="hud bottom-left">
+      <p>对比「独立 Mesh」与「InstancedMesh」在同一场景下的 Draw Calls / FPS，体现渲染层优化思路。</p>
+    </footer>
+
+    <script src="./dist/app.js" defer></script>
+  </body>
+</html>

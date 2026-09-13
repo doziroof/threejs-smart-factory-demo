@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #070b12;
+  color: #e8eef8;
+  font-family:
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    system-ui,
+    sans-serif;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+}
+
+#app canvas {
+  display: block;
+}
+
+.hud {
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud .panel,
+.hud h1,
+.hud .sub,
+.hud .meta,
+.hud p {
+  pointer-events: auto;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+  max-width: 340px;
+}
+
+.top-left h1 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, #7dd3fc, #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.top-left .sub {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: rgba(226, 232, 240, 0.72);
+}
+
+.meta {
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(10, 16, 28, 0.72);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.meta li span {
+  display: inline-block;
+  min-width: 52px;
+  margin-right: 8px;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.top-right {
+  top: 20px;
+  right: 20px;
+  width: min(300px, calc(100vw - 40px));
+}
+
+.panel {
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(10, 16, 28, 0.78);
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.row > span {
+  width: 64px;
+  flex: 0 0 auto;
+  color: rgba(203, 213, 225, 0.9);
+}
+
+.row input[type="range"] {
+  flex: 1;
+  accent-color: #38bdf8;
+}
+
+.row strong {
+  min-width: 42px;
+  text-align: right;
+  color: #7dd3fc;
+  font-variant-numeric: tabular-nums;
+}
+
+.btns {
+  display: flex;
+  flex: 1;
+  gap: 6px;
+}
+
+button {
+  flex: 1;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(30, 41, 59, 0.8);
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+button:hover {
+  border-color: rgba(125, 211, 252, 0.55);
+  background: rgba(51, 65, 85, 0.95);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button.active {
+  background: rgba(14, 165, 233, 0.28);
+  border-color: rgba(125, 211, 252, 0.85);
+  color: #e0f2fe;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.stats > div {
+  padding: 8px 6px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.stats strong {
+  font-size: 16px;
+  color: #7dd3fc;
+  font-variant-numeric: tabular-nums;
+}
+
+.tip {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: rgba(148, 163, 184, 0.85);
+}
+
+.boot-error {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: min(520px, calc(100vw - 40px));
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(127, 29, 29, 0.92);
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  color: #fecaca;
+  font-size: 13px;
+  line-height: 1.6;
+  pointer-events: auto;
+  z-index: 50;
+}
+
+.bottom-left {
+  left: 20px;
+  bottom: 18px;
+  max-width: min(520px, calc(100vw - 40px));
+}
+
+.bottom-left p {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.88);
+  background: rgba(10, 16, 28, 0.65);
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 720px) {
+  .top-left {
+    max-width: calc(100vw - 40px);
+  }
+
+  .top-right {
+    top: auto;
+    bottom: 64px;
+    right: 12px;
+  }
+
+  .bottom-left {
+    left: 12px;
+    right: 12px;
+    max-width: none;
+  }
+}

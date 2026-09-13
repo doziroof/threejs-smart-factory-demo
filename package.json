@@ -1,0 +1,20 @@
+{
+  "name": "threejs-smart-factory-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three.js 三维可视化个人 Demo：智慧工厂场景 + InstancedMesh 渲染性能对比",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve . -l 5173",
+    "dev": "npx --yes serve . -l 5173"
+  },
+  "keywords": [
+    "three.js",
+    "webgl",
+    "instanced-mesh",
+    "3d-visualization",
+    "portfolio"
+  ],
+  "author": "曹志浩",
+  "license": "MIT"
+}
