@@ -29,7 +29,7 @@
 ### 命令行
 
 ```bash
-cd "E:\简历v\Three.js 或 Cesium 小 demo"
+cd "项目地址"
 python -m http.server 5173 --bind 127.0.0.1
 # 浏览器打开 http://127.0.0.1:5173/
 ```
