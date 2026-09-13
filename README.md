@@ -1,12 +1,11 @@
 # Three.js 智慧工厂可视化 Demo
 
-个人作品：基于 **Three.js / WebGL** 的三维可视化小场景，用于展示三维场景搭建、交互控制与 **InstancedMesh 渲染优化** 能力。
+基于 **Three.js / WebGL** 的三维可视化小场景，用于展示三维场景搭建、交互控制与 **InstancedMesh 渲染优化** 能力。
 
-适合放进简历 / 作品集：可直接本地运行，也可部署到 GitHub Pages。
 
 ---
 
-## 亮点（可写进简历）
+## 亮点
 
 1. **场景与交互**：工厂主体、储罐环、管线、控制楼、状态标记；OrbitControls 旋转/平移/缩放。
 2. **渲染优化实践**：同一场景在 `InstancedMesh` 与「独立 Mesh」之间一键切换，实时对比 **FPS / Draw Calls / 三角面**。
@@ -74,16 +73,8 @@ Three.js 或 Cesium 小 demo/
 
 ---
 
-## 简历写法参考
 
-> **Three.js 智慧工厂可视化（个人项目）**  
-> - 使用 Three.js 搭建工业场景：储罐、管线、控制楼、粒子流与动态状态标记；  
-> - 实现 InstancedMesh 与独立 Mesh 双模式渲染对比，上千实例下显著降低 Draw Calls，验证批处理渲染优化；  
-> - 提供交互镜头、参数调节与实时 FPS/Draw Call 面板，体现可视化性能意识与前端工程化能力。
-
----
-
-## 后续可扩展（面试加分）
+## 后续可扩展
 
 - 加入 EffectComposer（Bloom）做后处理  
 - 用 `Raycaster` 做储罐点击高亮与属性面板  
